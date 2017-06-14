@@ -86,31 +86,31 @@ void print(Node* head)
     
 }
 
-//void rev(Node* head)
-//{
-//    Node* temp1,*xx,*yy;
-//    temp1 = yy = head;
-//    while(temp1->next!=NULL)
-//    {
-//        if(temp1==head)
-//        {
-//            yy=temp1->next;
-//            temp1->next=NULL;
-//            xx=temp1;
-//        }
-//        else
-//        {
-//            yy=temp1->next;
-//            temp1->next=temp1;
-//            xx=temp1;
-//        }
-//        temp1=yy;
-//    }
-//    head->next=NULL;
-//    head=temp1;
-//    temp1=head;
-//        
-//}
+void rev(Node* head)
+{
+   Node* temp1,*xx,*yy;
+   temp1 = yy = head;
+   while(temp1->next!=NULL)
+   {
+       if(temp1==head)
+       {
+           yy=temp1->next;
+           temp1->next=NULL;
+           xx=temp1;
+       }
+       else
+       {
+           yy=temp1->next;
+           temp1->next=temp1;
+           xx=temp1;
+       }
+       temp1=yy;
+   }
+   head->next=NULL;
+   head=temp1;
+   temp1=head;
+       
+}
 
 int main() 
 {
@@ -121,7 +121,7 @@ int main()
     insert(8);
     insert(2,2);
     insert(7,3);
-//    rev(head);
+    rev(head);
     print(head);  
     return 0;    
 }
