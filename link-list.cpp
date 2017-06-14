@@ -119,7 +119,8 @@ int main()
     insert(6);
     insert(1);
     insert(8);
-    insert(7);
+    insert(2,2);
+    insert(7,3);
 //    rev(head);
     print(head);  
     return 0;    
