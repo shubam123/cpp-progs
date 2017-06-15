@@ -4,8 +4,6 @@
 ------------ Delete ---------------
 ------------ PRINT ---------------
 ------------ LINKED LIST ---------------
---------- Reverse to be added later------------
----------- minor fixes later----------
  */
 
 
@@ -88,6 +86,20 @@ void print(Node* head)
     
 }
 
+void rev()
+{
+    Node *temp,*pre,*curr;
+    pre=NULL;
+    temp=curr=head;
+    while(temp!=NULL)
+    {
+        temp=temp->next;
+        curr->next=pre;
+        pre=curr;
+        curr=temp;
+    }
+    head=pre;
+}
 
 int main() 
 {
@@ -96,8 +108,10 @@ int main()
     insert(6);
     insert(1);
     insert(8);
-    insert(2,2);
-    insert(7,3);
+    insert(7);
+    print(head);
+    cout<<endl;
+    rev();
     print(head);  
     return 0;    
 }
