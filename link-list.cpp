@@ -101,17 +101,37 @@ void rev()
     head=pre;
 }
 
+void rev_rec(Node* p)
+{
+    
+    if(p->next==NULL)
+    {
+        head=p;
+        return;
+    }
+    rev_rec(p->next);
+    Node *nex;
+    nex=p->next;
+    nex->next=p;
+    p->next=NULL;
+    
+    
+}
+
 int main() 
 {
     head=NULL;
-    insert(5);
+    insert(5); //normal insert
     insert(6);
     insert(1);
     insert(8);
+    insert(2,3);  // insert at nth
     insert(7);
+    del(3);
     print(head);
     cout<<endl;
-    rev();
+    rev_rec(head); //for recursion
+    rev(); //noraml reverse
     print(head);  
     return 0;    
 }
