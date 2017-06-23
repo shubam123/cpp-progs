@@ -10,6 +10,7 @@
 
 #include<iostream>
 #include<string>
+#include<cctype>
 using namespace std;
 
 struct Node{
@@ -117,7 +118,7 @@ void rev_rec(Node* p)
     
     
 }
-
+/*
 int main() 
 {
     head=NULL;
@@ -135,4 +136,4 @@ int main()
     print(head);  
     return 0;    
 }
-
+*/
